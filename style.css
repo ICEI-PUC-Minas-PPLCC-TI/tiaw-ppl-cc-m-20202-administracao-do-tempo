@@ -1,0 +1,340 @@
+html,body{
+    height: 100%;
+  }
+  
+  body::after {
+    content: "";
+    background: url(img/background.png);
+    background-size: 60% 90%;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-position: right;
+  }
+  li{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: Arial;
+  }
+  p {
+    margin-left: 20px;
+    padding: 0px;
+    list-style: none;
+    font-family: Arial;
+    font-size: medium;
+  }
+  h1{
+    padding: 0px;
+    font-family: Arial;
+    font-size: large;
+    margin-left: 20px;
+  }
+  .menu-lateral
+  {
+    text-align: center;
+  }
+  .menu-lateral li
+  {
+    padding: 20px;
+    background-color: #CADEFE;
+    font-size: medium;
+  }
+  .conteudopomodoro p
+  {
+    font-size: small;
+  }
+  .conteudopomodoro h1
+  {
+    font-size: xx-large;
+  }
+  .textomaior{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    font-size: 200%;
+    color:#478EFF
+  }
+  .textomenor
+  {
+    padding: 0px;
+    list-style: none;
+    font-family: Arial;
+    font-size: medium;
+    margin: 0px;
+  }
+  .comment
+  {
+    text-align: center;
+    font-size: large;
+  }
+  .logo {
+    width: 200px;
+    display: block;
+    margin-left: 150px;
+    margin-top: 20px;
+  }
+  .logofooter {
+    max-width: 10%;
+    display: block;
+    margin-left: 50%;
+  }
+  #assistentedefoco
+  {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    border-radius: 50px !important;
+    padding: 5px 20px;
+    color: white;
+    background-color: #404449;
+    z-index: 999;
+  }
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+  }
+  .principalt
+  {
+    margin-top: 100px;
+  }
+  .section2
+  {
+    display: block;
+  }
+  .section3
+  {
+    background-color:#488EFE;
+    display: block;
+  }
+  .footer {
+    color: white;
+    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 0px;
+    background-color: #404449;;
+  }
+  .ceta2
+  {
+    z-index: 1;
+    color: black;
+    font-size: xx-large;
+    margin-left: 50%;
+  }
+  .menu {
+    display: flex;
+  }
+  
+  .menu li {
+    margin-left: 10px;
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 150%;
+    color: black;
+    margin-right: 80px;
+  }
+  
+  #menuToggle {
+    display: none;
+  }
+  .menu-icon {
+    display: none;
+  }
+  .container-ctn
+  {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+  /* Estrategias */
+  .tituloestrategias
+  {
+    margin-top: 10px;
+    font-size: 300%;
+    text-align: center;
+    color:#488EFE;
+    padding: 50px;
+    margin-bottom: 50px;
+  }
+  .card-subtitle{
+    font-size: small;
+    color: green;
+  }
+  .card-subtitle2{
+    font-size: small;
+    color: orange;
+  }
+  .card-subtitle3{
+    font-size: small;
+    color: red;
+  }
+  .card-title
+  {
+    font-size: xx-large;
+    color:  rgb(159, 81, 179);
+  }
+  /* .card{
+    align-items: center;
+    align-content: center;
+    display: block;
+  } */
+  .card
+  {
+    border-radius: 5%;
+    width: 1000px;
+    height: 100%;
+    display: block;
+    z-index: 1;
+  }
+  .cardimg
+  {
+    border-radius: 5%;
+  }
+  .carregar
+  {
+    text-align: center;
+    font-size: x-large;
+    padding: 10px;
+  }
+  /* Dicas */
+  .titulodicas
+  {
+    font-size: 300%;
+    text-align: center;
+    color:white;
+    padding: 50px;
+  }
+  /* Sobre o Projeto */
+  .sectionadendo
+  {
+    height: 100vh;
+    margin-top: 100px;
+  }
+  .subt
+  {
+    background-color:#488EFE;
+    padding: 20px ;
+  }
+  .subt p{
+    margin-left: 150px;
+    color: white;
+    font-size: xx-large;
+  }
+  /* Carrocel */
+  .textocarrousel
+  {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 60px;
+  }
+  /* Menu Mobile */
+  @media screen and (max-width: 768px) {
+    body::after
+    {
+      display: none;
+    }
+    .header{
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
+    .header nav {
+      display: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .menu {
+        display: flex;
+        position: fixed;
+        flex-wrap: wrap;
+        align-content: center;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 0%;
+        background-color: #c9c9c9;
+        opacity: 90%;
+        overflow: hidden;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        transition: height 0.3s;
+    }
+  
+    .menu li {
+      display: block;
+      width: 100%;
+      margin-left: 0px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      color: black;
+    }
+  
+    .menu li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    .menu-icon {
+        width: 50px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        line-height: 60px;
+        color: black;
+        z-index: 999;
+    }
+    #menuToggle:checked ~ label i:nth-child(2) {
+      display: block;
+    }
+    #menuToggle:checked ~ label i:first-child {
+      display: none;
+    }
+    #menuToggle:not(:checked) ~ label i:first-child {
+      display: block;
+    }
+    #menuToggle:not(:checked) ~ label i:nth-child(2) {
+      display: none;
+    }
+  
+    #menuToggle:checked ~ ul {
+        height: 100%;
+    }
+    .menu-icon i {
+        font-size: 1.7em;
+    }
+    .logofooter {
+      max-width: 20%;
+      display: block;
+    }
+    .tituloestrategias
+    {
+      font-size: 200%;
+    }
+    .section3
+    {
+      display: none;
+    }
+  }
