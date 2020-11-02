@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa Feita</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ltb3ybw.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/line.css">
+</head>
+<body>
+    <div id="wrapper-assistente" class="assistente_de_foco">
+        <div class="configuracao">
+            <div class="objetivos">
+                <h3>Defina seus objetivos!</h3>
+                <p>Antes de começar alguma tarefa procure deixar explícito quais são seus objetivos e quanto tempo pretende usar para
+                    alcançá-los. Isto o ajudará a se manter focado no que realmente importa!
+                </p>
+                <div class="lista_de_tarefas">
+                    <input placeholder="Defina um objetivo" id="input_tarefa" type="tarefa">
+                    <button id="adicionar_tarefa"><i class="uil uil-plus"></i></button>
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="tempo">
+                <h3>Defina um limite de tempo para alcançar esses objetivos</h3>
+                <input placeholder="15" value="15" type="number" name="tempo" id="input_tempo"> Minutos<br>
+                <button id="iniciar_tarefa">Iniciar Tarefa</button>
+            </div>  
+        </div>
+
+        <div class="executando">
+            <div class="objetivos">
+
+                <h3>Seus Objetivos:</h3>
+                
+                <div class="lista"></div>
+                
+            </div>
+            <div class="tempo">
+
+                <h3>Tempo restante</h3>
+                <div class="area_tempo_restante">
+                    <span id=tempo_restante >0:0</span>
+                     <span id="tempoConfigurado" ></span>
+                </div>
+                <!-- <button executando id="pausar_resumir">Pausar</button> -->
+                <button id="reiniciar" >Reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="assistente">Assistente de Foco <i class="uil uil-crosshair"></i></button>
+    <script src="scripts/app.js"></script>
+
+    
+</body>
+</html>
