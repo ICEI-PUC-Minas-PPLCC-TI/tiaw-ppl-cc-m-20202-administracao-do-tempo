@@ -41,7 +41,7 @@ iniciarTarefa.addEventListener('click', () => {
 })
 
 function timer(m) {
-    let s = 60
+    let s = 0
     let time = setInterval(() => {
         if (s == 0) {
             s = 59;
