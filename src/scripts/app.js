@@ -40,7 +40,7 @@ window.onscroll = (e) => {
     console.log(e);
 }
 
-
+// Assistente de foco
 
 adicionarTarefa.addEventListener('click', () => {
     let tarefa = inputTarefa.value
