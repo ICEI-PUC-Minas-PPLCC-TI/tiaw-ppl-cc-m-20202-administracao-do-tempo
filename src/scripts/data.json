@@ -1,0 +1,28 @@
+[
+    {
+        "title" : "Scrum",
+        "excerpt" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?",
+        "level" : "Médio",
+        "thumbnail" : "src/assets/scrum.jpg"
+        
+    },
+    {
+        "title" : "Pomodoro",
+        "excerpt" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?",
+        "level" : "Fácil",
+        "thumbnail" : "src/assets/pomodoro.jpg"
+    },
+    {
+        "title" : "Getting the Things Done",
+        "excerpt" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?",
+        "level" : "Fácil",
+        "thumbnail" : "src/assets/gtd.jpg"
+    },
+
+    {
+        "title" : "Kanban",
+        "excerpt" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?",
+        "level" : "Fácil",
+        "thumbnail" : "src/assets/kanban.jpg"
+    }
+]

@@ -155,6 +155,7 @@ input{
     margin-right: 10px;
 }
 #assistente{
+    cursor: pointer;
     position: absolute;
     bottom: 0;
     padding: 12px 25px;

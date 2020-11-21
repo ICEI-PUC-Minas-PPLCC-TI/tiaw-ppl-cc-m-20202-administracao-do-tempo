@@ -1,0 +1,101 @@
+@import url("https://use.typekit.net/ltb3ybw.css");
+
+$font-family-sans-serif: sofia-pro-soft, sans-serif;
+$font-family-base: sofia-pro-soft, sans-serif;
+
+// Cores da Identidade visual
+$primary: #488efe;
+$dark: #404449;
+$light: #fafafa;
+
+$yiq-text-dark: #404449;
+$gray-900: #404449;
+
+// Tamanho dos conainters
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1300px,
+) !default;
+
+dt,
+dd {
+    font-size: 1rem;
+}
+
+dd {
+    color: #686c72;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+nav {
+    transition: 0.3s;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.__innerContent {
+    background-color: #fff;
+    padding: 100px 50px;
+    margin: 50px;
+}
+
+.splide__arrow {
+    background: #488efe !important;
+    color: #fff;
+}
+.splide__arrow svg {
+    filter: invert(1);
+}
+#blip-chat-iframe{
+left: 30px;
+right: unset;
+}
+#blip-chat-open-iframe {
+    right: unset;
+    left: 30px;
+    
+}
+
+
+
+.list-group-item-dark{
+    background-color: #32363a !important;
+    padding: 6px 12px !important;
+    color: #fafafa !important;
+    border-bottom: 1px solid rgb(36, 36, 36) !important;
+}
+
+.list-group-item-dark:last-of-type{
+    border-bottom: none !important;
+    
+}
+
+
+.__roundedButton{
+    border-radius: 50px !important ;
+}
+
+.__borderRadius{
+    border-radius: 20px !important;
+}
+.executando{
+    display: none;
+}
+
+
+$input-height:   calc($input-line-height * .25em, $input-padding-y / 2);    
+$input-height-sm:   calc($input-line-height * .25em, $input-padding-y / 2);                     
+$input-height-lg:   calc($input-line-height * .25em, $input-padding-y / 2);    
+
+// Importa todo o bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+// Fonte da identidade visual

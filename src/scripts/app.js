@@ -11,12 +11,42 @@ const tempoConfigurado = document.getElementById('tempoConfigurado')
 const tempoRestante = document.getElementById('tempo_restante')
 const wrapperAssistente = document.getElementById('wrapper-assistente')
 const BotaoAssistente = document.getElementById('assistente')
-
+const menuPrincipal = document.getElementById('__menu__principal')
+const logoNav = document.getElementById('__logoNav')
+const navLink = document.getElementsByClassName('nav-link');
 let removerTarefa = document.querySelectorAll('.remover_tarefa');
+
+// Muda a aparência do menu fixo ao rolar a página
+window.onscroll = (e) => {
+    if (pageYOffset > 0) {
+        Array.from(navLink).forEach(element => {
+            element.classList.remove('text-dark');
+            element.classList.add('text-light');
+        });
+        logoNav.src = 'src/assets/logo-tarefa-feita-negativo.svg'
+        logoNav.width = '160'
+        menuPrincipal.classList.add('bg-primary', 'p-2')
+        menuPrincipal.classList.remove('p-3')
+    } else {
+        Array.from(navLink).forEach(element => {
+            element.classList.add('text-dark');
+            element.classList.remove('text-light');
+        });
+        logoNav.src = 'src/assets/logo-tarefa-feita.svg'
+        logoNav.width = '180'
+        menuPrincipal.classList.remove('bg-primary', 'p-2')
+        menuPrincipal.classList.add('p-3')
+    }
+    console.log(e);
+}
+
+
 
 adicionarTarefa.addEventListener('click', () => {
     let tarefa = inputTarefa.value
     let li = document.createElement('li')
+    let liClasses = ['list-group-item', 'list-group-item-dark', 'd-flex', 'justify-content-between', 'align-items-center']
+    li.classList.add(...liClasses);
     li.innerHTML = `${tarefa} <span class="remover_tarefa"><i class="uil uil-minus-circle"></i></span> `
     listaDeTarefas.appendChild(li)
     inputTarefa.value = ''
@@ -28,7 +58,6 @@ adicionarTarefa.addEventListener('click', () => {
         })
     })
 })
-
 iniciarTarefa.addEventListener('click', () => {
     configuracao.style.display = 'none'
     executando.style.display = 'block'
@@ -39,9 +68,8 @@ iniciarTarefa.addEventListener('click', () => {
     console.log(ul);
     el.append(ul)
 })
-
 function timer(m) {
-    let s = 60
+    let s = 0
     let time = setInterval(() => {
         if (s == 0) {
             s = 59;
@@ -50,7 +78,6 @@ function timer(m) {
             s--;
         }
         tempoEncerrado();
-
         tempoRestante.innerHTML = `${m}:${s}`
     }, 1000)
     reiniciar.addEventListener('click', () => {
@@ -62,8 +89,6 @@ function timer(m) {
         }
     }
 }
-
-
 reiniciar.addEventListener('click', () => {
     configuracao.style.display = 'block'
     executando.style.display = 'none'
@@ -72,14 +97,11 @@ reiniciar.addEventListener('click', () => {
     })
     // clearInterval(time)
 })
-
-
-BotaoAssistente.addEventListener('click', () =>{
-
-    if(wrapperAssistente.hasAttribute('visible')){
+BotaoAssistente.addEventListener('click', () => {
+    if (wrapperAssistente.hasAttribute('visible')) {
         console.log('none');
         wrapperAssistente.style.display = 'none'
-    }else{
+    } else {
         console.log('block');
         wrapperAssistente.style.display = 'block'
     }
