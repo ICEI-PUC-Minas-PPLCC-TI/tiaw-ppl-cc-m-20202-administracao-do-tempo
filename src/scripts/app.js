@@ -25,8 +25,9 @@ window.onscroll = (e) => {
         });
         logoNav.src = 'src/assets/logo-tarefa-feita-negativo.svg'
         logoNav.width = '160'
-        menuPrincipal.classList.add('bg-primary', 'p-2')
+        menuPrincipal.classList.add('bg-primary', 'pt-2', 'pt-2')
         menuPrincipal.classList.remove('p-3')
+        document.getElementById('__toggleIcon').classList.add('text-light')        
     } else {
         Array.from(navLink).forEach(element => {
             element.classList.add('text-dark');
@@ -34,10 +35,11 @@ window.onscroll = (e) => {
         });
         logoNav.src = 'src/assets/logo-tarefa-feita.svg'
         logoNav.width = '180'
-        menuPrincipal.classList.remove('bg-primary', 'p-2')
+        menuPrincipal.classList.remove('bg-primary', 'pt-2', 'pt-2')
         menuPrincipal.classList.add('p-3')
+        document.getElementById('__toggleIcon').classList.remove('text-light')  
     }
-    console.log(e);
+    // console.log(e);
 }
 
 // Assistente de foco
@@ -54,7 +56,7 @@ adicionarTarefa.addEventListener('click', () => {
     removerTarefa.forEach(e => {
         e.addEventListener('click', (ev) => {
             ev.target.parentNode.parentNode.remove()
-            console.log();
+            // console.log();
         })
     })
 })
@@ -65,7 +67,7 @@ iniciarTarefa.addEventListener('click', () => {
     timer(inputTempo.value);
     let el = document.querySelector('.lista')
     let ul = listaDeTarefas.cloneNode(true)
-    console.log(ul);
+    // console.log(ul);
     el.append(ul)
 })
 function timer(m) {
@@ -99,10 +101,10 @@ reiniciar.addEventListener('click', () => {
 })
 BotaoAssistente.addEventListener('click', () => {
     if (wrapperAssistente.hasAttribute('visible')) {
-        console.log('none');
+        // console.log('none');
         wrapperAssistente.style.display = 'none'
     } else {
-        console.log('block');
+        // console.log('block');
         wrapperAssistente.style.display = 'block'
     }
     wrapperAssistente.toggleAttribute('visible')

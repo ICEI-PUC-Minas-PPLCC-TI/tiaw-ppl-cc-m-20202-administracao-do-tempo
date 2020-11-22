@@ -48,6 +48,10 @@ nav {
   left: 30px;
 }
 
+a {
+  cursor: pointer;
+}
+
 .list-group-item-dark {
   background-color: #32363a !important;
   padding: 6px 12px !important;
