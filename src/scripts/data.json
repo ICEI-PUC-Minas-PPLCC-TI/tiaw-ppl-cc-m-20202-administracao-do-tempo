@@ -3,7 +3,8 @@
         "title" : "Teste1",
         "excerpt" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?",
         "level" : "Médio",
-        "thumbnail" : "src/assets/scrum.jpg"
+        "thumbnail" : "src/assets/scrum.jpg",
+        "article" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nisi blanditiis ipsa distinctio excepturi rerum dolore officiis mollitia possimus delectus?"
         
     },
     {
