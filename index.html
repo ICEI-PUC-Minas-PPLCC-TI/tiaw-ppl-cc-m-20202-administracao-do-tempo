@@ -32,10 +32,9 @@
                             tf-destino="main">Contato</a></li>
                     </li>
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
+                    <li class="nav-item"><a class="nav-link font-weight-bold text-dark" data-toggle="modal"
+                        data-target="#exampleModal">Login</a></li>
+                    </li>
 
                 </ul>
             </div>
@@ -219,24 +218,22 @@
 
 
 
-                    <!-- Modal -->
+                    <!-- Modal-Login -->
                     <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                             <div class="modal-body">
-
-
                                 <div id="login">
                                     <h3 class="text-center text-white pt-5">Novo Usuário</h3>
                                     <div class="container">
                                         <div id="login-row" class="row justify-content-center align-items-center">
-                                            <div id="login-column" class="col-md-6">
+                                            <div id="login-column" class="col-md-12">
                                                 <div id="login-box" class="col-md-12">
                                                     <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
                                                         <h3 class="text-center text-info">Login</h3>
@@ -246,7 +243,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="password" class="text-info">Senha</label><br>
-                                                            <input type="text" name="password" id="password" class="form-control">
+                                                            <input type="password" name="password" id="password" class="form-control">
                                                         </div>
                                                         <div class="form-group text-right">                                
                                                             <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
@@ -257,7 +254,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
                             
                               <!-- Modal -->
                               <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
