@@ -18,7 +18,7 @@ let removerTarefa = document.querySelectorAll('.remover_tarefa');
 
 // Muda a aparência do menu fixo ao rolar a página
 window.onscroll = (e) => {
-    if (pageYOffset > 0) {
+    if (pageYOffset > 0) {b
         Array.from(navLink).forEach(element => {
             element.classList.remove('text-dark');
             element.classList.add('text-light');
@@ -27,7 +27,7 @@ window.onscroll = (e) => {
         logoNav.width = '160'
         menuPrincipal.classList.add('bg-primary', 'pt-2', 'pt-2')
         menuPrincipal.classList.remove('p-3')
-        document.getElementById('__toggleIcon').classList.add('text-light')        
+        document.getElementById('__toggleIcon').classList.add('text-light')
     } else {
         Array.from(navLink).forEach(element => {
             element.classList.add('text-dark');
@@ -37,13 +37,12 @@ window.onscroll = (e) => {
         logoNav.width = '180'
         menuPrincipal.classList.remove('bg-primary', 'pt-2', 'pt-2')
         menuPrincipal.classList.add('p-3')
-        document.getElementById('__toggleIcon').classList.remove('text-light')  
+        document.getElementById('__toggleIcon').classList.remove('text-light')
     }
     // console.log(e);
 }
 
 // Assistente de foco
-
 adicionarTarefa.addEventListener('click', () => {
     let tarefa = inputTarefa.value
     let li = document.createElement('li')
@@ -60,52 +59,113 @@ adicionarTarefa.addEventListener('click', () => {
         })
     })
 })
+
+
 iniciarTarefa.addEventListener('click', () => {
     configuracao.style.display = 'none'
     executando.style.display = 'block'
-    tempoConfigurado.innerHTML = `/ ${inputTempo.value}:0 Minutos`
-    timer(inputTempo.value);
+    tempoConfigurado.innerHTML = `/ ${formatarNum(inputTempo.value)}:00 Minutos`
+   
+
+    //Configurar o timer 
+    cronometro.tempo = inputTempo.value * 60
+    cronometro.iniciar()
+
     let el = document.querySelector('.lista')
     let ul = listaDeTarefas.cloneNode(true)
     // console.log(ul);
     el.append(ul)
 })
-function timer(m) {
-    let s = 0
-    let time = setInterval(() => {
-        if (s == 0) {
-            s = 59;
-            m--;
-        } else if (s <= 60) {
-            s--;
-        }
-        tempoEncerrado();
-        tempoRestante.innerHTML = `${m}:${s}`
-    }, 1000)
-    reiniciar.addEventListener('click', () => {
-        clearInterval(time)
-    })
-    function tempoEncerrado() {
-        if (m == 0 && s == 0) {
-            clearInterval(time)
-        }
+
+
+
+
+function formatarNum(num) {
+    return num <= 9 ? '0' + num : num
+}
+
+
+class Cronometro{
+    constructor({tempo}){
+        this.tempo = tempo
+        
     }
 }
-reiniciar.addEventListener('click', () => {
-    configuracao.style.display = 'block'
-    executando.style.display = 'none'
-    document.querySelectorAll('.lista > ul > li').forEach(el => {
-        el.remove();
-    })
-    // clearInterval(time)
-})
-BotaoAssistente.addEventListener('click', () => {
-    if (wrapperAssistente.hasAttribute('visible')) {
-        // console.log('none');
-        wrapperAssistente.style.display = 'none'
-    } else {
-        // console.log('block');
-        wrapperAssistente.style.display = 'block'
+
+
+var cronometro = {
+
+    tempo: 0,
+    minuto: 0,
+    segundo: 0,
+    iniciar: function () {
+        
+       
+
+        var t = setInterval(() => {
+            this.tempo--
+            this.minuto = Math.floor(this.tempo / 60)
+            this.segundo = this.tempo % 60
+
+            // console.log(`${formatarNum(this.minuto)}:${formatarNum(this.segundo)}`)
+            tempoRestante.innerHTML = `${formatarNum(this.minuto)}:${formatarNum(this.segundo)}`
+
+            this.fim(this.tempo, t)
+            this.parar(this.tempo, t)
+            this.pausar(this.tempo, t)
+
+        }, 1000);
+    },
+    fim: function (tempo, timer) {
+        this.tempo == 0 ? clearTimeout(timer) : null
+    },
+    parar: function (tempo, timer) {
+
+
+        reiniciar.addEventListener('click', () => {
+            clearTimeout(timer)
+            configuracao.style.display = 'block'
+            executando.style.display = 'none'
+            document.querySelectorAll('.lista > ul > li').forEach(el => {
+                el.remove();
+            })
+
+        })
+
+    },
+    pausar: function (tempo, timer) {
+                
+        pausarResumir.addEventListener('click', () => {
+            
+            
+            pausarResumir.classList.toggle('paused')
+            
+            if(pausarResumir.classList.contains('paused')){
+                clearTimeout(timer)
+                localStorage.setItem('cronometro_pausado', tempo);
+                console.log('paused');
+            }else{
+                localStorage.removeItem('cronometro_pausado', tempo);
+                this.tempo = localStorage.getItem('cronometro_pausado');
+                this.iniciar();
+            }
+            
+   
+        });
+
     }
-    wrapperAssistente.toggleAttribute('visible')
-})
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
