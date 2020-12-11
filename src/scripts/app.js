@@ -18,7 +18,7 @@ let removerTarefa = document.querySelectorAll('.remover_tarefa');
 
 // Muda a aparência do menu fixo ao rolar a página
 window.onscroll = (e) => {
-    if (pageYOffset > 0) {b
+    if (pageYOffset > 0) {
         Array.from(navLink).forEach(element => {
             element.classList.remove('text-dark');
             element.classList.add('text-light');
@@ -65,7 +65,7 @@ iniciarTarefa.addEventListener('click', () => {
     configuracao.style.display = 'none'
     executando.style.display = 'block'
     tempoConfigurado.innerHTML = `/ ${formatarNum(inputTempo.value)}:00 Minutos`
-   
+
 
     //Configurar o timer 
     cronometro.tempo = inputTempo.value * 60
@@ -85,10 +85,10 @@ function formatarNum(num) {
 }
 
 
-class Cronometro{
-    constructor({tempo}){
+class Cronometro {
+    constructor({ tempo }) {
         this.tempo = tempo
-        
+
     }
 }
 
@@ -99,8 +99,8 @@ var cronometro = {
     minuto: 0,
     segundo: 0,
     iniciar: function () {
-        
-       
+
+
 
         var t = setInterval(() => {
             this.tempo--
@@ -134,38 +134,46 @@ var cronometro = {
 
     },
     pausar: function (tempo, timer) {
-                
+
         pausarResumir.addEventListener('click', () => {
-            
-            
+
+
             pausarResumir.classList.toggle('paused')
-            
-            if(pausarResumir.classList.contains('paused')){
+
+            if (pausarResumir.classList.contains('paused')) {
                 clearTimeout(timer)
                 localStorage.setItem('cronometro_pausado', tempo);
                 console.log('paused');
-            }else{
+            } else {
                 localStorage.removeItem('cronometro_pausado', tempo);
                 this.tempo = localStorage.getItem('cronometro_pausado');
                 this.iniciar();
             }
-            
-   
+
+
         });
 
     }
 
 };
 
+// Secao de Favoritos
 
-
-
-
-
-
-
-
-
-
-
-
+function botaofav() {
+    fetch('src/scripts/data.json').then(res => {
+        return res.json();
+    }).then(data => {
+        let codigo_html = '';
+        data.forEach((e) => {
+            for (i = 0; i <= corrente.fav.length; i++) {
+                if (corrente.fav[i] == e.id) {
+                    codigo_html += `<div class="col-12 col-sm-12 col-md-12 col-lg-6"><h3 class="iteize">${e.title}</h3></div>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                    <img src="${e.thumbnail}" class="card-img-top" alt="${e.title}">
+                                    </div>`;
+                }
+            }
+        });
+        $('#bodyangels').html(codigo_html)
+    });
+}

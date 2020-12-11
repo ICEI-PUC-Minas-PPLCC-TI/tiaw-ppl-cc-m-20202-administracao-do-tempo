@@ -12,6 +12,25 @@
 </head>
 
 <body class="position: relative">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Favoritados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="bodyangels">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Menu -->
     <nav style="background-color: rgba(255, 255, 255, 0.623);" id="__menu__principal"
         class="fixed-top navbar navbar-expand-sm navbar-light  border-bottom p-3">
@@ -33,7 +52,7 @@
                     </li>
 
                     <li class="nav-item"><a class="nav-link font-weight-bold text-dark" data-toggle="modal"
-                        data-target="#exampleModal">Login</a></li>
+                            data-target="#exampleModal1">Login</a></li>
                     </li>
 
                 </ul>
@@ -81,7 +100,12 @@
             <div class="container-xl d-flex flex-column   text-center align-items-center">
                 <h2 class="w-50 text-primary mb-5">Explore as melhores estratégias e metodologias de administração do
                     tempo
+                    <!-- Favoritos MODAL -->
+                    <button type="button" class="btn btn-primary uil uil-book-alt" data-toggle="modal"
+                        data-target="#exampleModal" id="bookfav" onclick="botaofav()">
+                    </button>
                 </h2>
+
                 <div id="__gridMetodologias" class="row row-cols-1 row-cols-md-4 mb-5">
                     <!-- Aqui vão entrar os cards gerados dinamicamente a partir do jso -->
                 </div>
@@ -186,22 +210,22 @@
                         <span id=tempo_restante>0:0</span>
                         <span class="text-muted" id="tempoConfigurado"></span>
                     </div>
-                    <button class="btn btn-primary __roundedButton"  id="pausar_resumir">Pausar</button>
+                    <button class="btn btn-primary __roundedButton" id="pausar_resumir">Pausar</button>
                     <button class="btn btn-primary __roundedButton" id="reiniciar">Reiniciar</button>
                 </div>
             </div>
         </div>
     </div> <!-- Fim container -->
     </div><!-- Fim Assistente de foco -->
-    <script src="scripts/app.js"></script>
+    <script src="src/scripts/app.js"></script>
     <script src="src/vendors/jquery.min.js"></script>
     <script src="src/vendors/popper.min.js"></script>
     <script src="src/vendors/bootstrap.min.js"></script>
     <script src="src/vendors/splide.min.js"></script>
     <script src="src/scripts/app.js"></script>
     <script>
-        
-        
+
+
     </script>
     <!-- Start of ChatBot (BLiP) code -->
     <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
@@ -221,226 +245,304 @@
 
 
 
-                    <!-- Modal-Login -->
-                    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            <div class="modal-body">
-                                <div id="login">
-                                    <h3 class="text-center text-white pt-5">Novo Usuário</h3>
-                                    <div class="container">
-                                        <div id="login-row" class="row justify-content-center align-items-center">
-                                            <div id="login-column" class="col-md-12">
-                                                <div id="login-box" class="col-md-12">
-                                                    <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
-                                                        <h3 class="text-center text-info">Login</h3>
-                                                        <div class="form-group">
-                                                            <label for="username" class="text-info">Usuário</label><br>
-                                                            <input type="text" name="username" id="username" class="form-control">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="password" class="text-info">Senha</label><br>
-                                                            <input type="password" name="password" id="password" class="form-control">
-                                                        </div>
-                                                        <div class="form-group text-right">                                
-                                                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">Novo usuario</button>
+    <!-- Modal-Login -->
+    <div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="login">
+                        <h3 class="text-center text-white pt-5">Novo Usuário</h3>
+                        <div class="container">
+                            <div id="login-row" class="row justify-content-center align-items-center">
+                                <div id="login-column" class="col-md-12">
+                                    <div id="login-box" class="col-md-12">
+                                        <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                                            <h3 class="text-center text-info">Login</h3>
+                                            <div class="form-group">
+                                                <label for="username" class="text-info">Usuário</label><br>
+                                                <input type="text" name="username" id="username" class="form-control">
                                             </div>
-                                        </div>
+                                            <div class="form-group">
+                                                <label for="password" class="text-info">Senha</label><br>
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="form-group text-right">
+                                                <input type="submit" name="submit" class="btn btn-info btn-md"
+                                                    value="submit">
+                                            </div>
+                                        </form>
                                     </div>
+                                    <button type="button" class="btn btn-info" data-toggle="modal"
+                                        data-target="#loginModal">Novo usuario</button>
                                 </div>
                             </div>
                         </div>
-                    </div>      
-                            
-                              <!-- Modal -->
-                              <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="loginModalLabel">Login App</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div id="login-box" class="col-md-12">
-                                            <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
-                                                <h3 class="text-center text-info">Novo usuário</h3>
-                                                <div class="form-group">
-                                                    <label for="login" class="text-info">Usuário</label><br>
-                                                    <input type="text" name="txt_login" id="txt_login" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="nome" class="text-info">Nome completo</label><br>
-                                                    <input type="text" name="txt_nome" id="txt_nome" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="email" class="text-info">email</label><br>
-                                                    <input type="text" name="txt_email" id="txt_email" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="senha" class="text-info">Senha</label><br>
-                                                    <input type="password" name="txt_senha" id="txt_senha" class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="senha2" class="text-info">Confirmação de Senha</label><br>
-                                                    <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                      <button type="button" id="btn_salvar" class="btn btn-info">Salvar</button>
-                                    </div>
-                                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login App</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="login-box" class="col-md-12">
+                            <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                                <h3 class="text-center text-info">Novo usuário</h3>
+                                <div class="form-group">
+                                    <label for="login" class="text-info">Usuário</label><br>
+                                    <input type="text" name="txt_login" id="txt_login" class="form-control">
                                 </div>
-                              </div>
-                                <script src="src/scripts/login.js"></script>
-                                <script>
-                                    // Declara uma função para processar o formulário de login
-                                    function processaFormLogin (event) {                
-                                            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-                                            event.preventDefault ();
-                                            // Obtem os dados de login e senha a partir do formulário de login
-                                            var username = document.getElementById('username').value;
-                                            var password = document.getElementById('password').value;
-                                            // Valida login e se estiver ok, redireciona para tela inicial da aplicação
-                                            resultadoLogin = loginUser (username, password);
-                                            if (resultadoLogin) {
-                                                window.location.href = 'index.html';
-                                            }
-                                            else { // Se login falhou, avisa ao usuário
-                                                alert ('Usuário ou senha incorretos');
-                                            }
-                                    }
-                                    function salvaLogin (event) {
-                                        // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-                                        event.preventDefault ();
-                                        // Obtem os dados do formulário
-                                        let login  = document.getElementById('txt_login').value;
-                                        let nome   = document.getElementById('txt_nome').value;
-                                        let email  = document.getElementById('txt_email').value;
-                                        let senha  = document.getElementById('txt_senha').value;
-                                        let senha2 = document.getElementById('txt_senha2').value;
-                                        if (senha != senha2) {
-                                            alert ('As senhas informadas não conferem.');
-                                            return
-                                        }
-                            
-                                        // Adiciona o usuário no banco de dados
-                                        addUser (nome, login, senha, email);
-                                        alert ('Usuário salvo com sucesso. Proceda com o login para ');
-                            
-                                        // Oculta a div modal do login
-                                        //document.getElementById ('loginModal').style.display = 'none';
-                                        $('#loginModal').modal('hide');
-                                    }
-                            
-                                    // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
-                                    document.getElementById ('login-form').addEventListener ('submit', processaFormLogin);
-                            
-                            
-                                    // Associar salvamento ao botao
-                                    document.getElementById ('btn_salvar').addEventListener ('click', salvaLogin);        
-                                </script>
+                                <div class="form-group">
+                                    <label for="nome" class="text-info">Nome completo</label><br>
+                                    <input type="text" name="txt_nome" id="txt_nome" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">email</label><br>
+                                    <input type="text" name="txt_email" id="txt_email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="senha" class="text-info">Senha</label><br>
+                                    <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="senha2" class="text-info">Confirmação de Senha</label><br>
+                                    <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btn_salvar" class="btn btn-info">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="src/scripts/login.js"></script>
+        <script>
+            // Declara uma função para processar o formulário de login
+            function processaFormLogin(event) {
+                // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+                event.preventDefault();
+                // Obtem os dados de login e senha a partir do formulário de login
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                // Valida login e se estiver ok, redireciona para tela inicial da aplicação
+                resultadoLogin = loginUser(username, password);
+                if (resultadoLogin) {
+                    window.location.href = 'index.html';
+                }
+                else { // Se login falhou, avisa ao usuário
+                    alert('Usuário ou senha incorretos');
+                }
+            }
+            function salvaLogin(event) {
+                // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+                event.preventDefault();
+                // Obtem os dados do formulário
+                let login = document.getElementById('txt_login').value;
+                let nome = document.getElementById('txt_nome').value;
+                let email = document.getElementById('txt_email').value;
+                let senha = document.getElementById('txt_senha').value;
+                let senha2 = document.getElementById('txt_senha2').value;
+                if (senha != senha2) {
+                    alert('As senhas informadas não conferem.');
+                    return
+                }
+
+                // Adiciona o usuário no banco de dados
+                addUser(nome, login, senha, email);
+                alert('Usuário salvo com sucesso. Proceda com o login para ');
+
+                // Oculta a div modal do login
+                //document.getElementById ('loginModal').style.display = 'none';
+                $('#loginModal').modal('hide');
+            }
+
+            // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
+            document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+
+
+            // Associar salvamento ao botao
+            document.getElementById('btn_salvar').addEventListener('click', salvaLogin);        
+        </script>
 
 
 
 
-    <script>
+        <script>
 
-        //Renderiza os artigos
+            let metodologias = {}
+            //Renderiza os artigos
 
-        function renderArtigos() {
+            function renderArtigos() {
 
-            fetch('src/scripts/data.json').then(res => {
-                return res.json();
-            }).then(data => {
-                let metodologias = data
-                // console.log(metodologias.length);
-                metodologias.forEach(element => {
-                    let title = element.title
-                    let thumbnail = element.thumbnail
-                    let excerpt = element.excerpt
-                    let level = element.level
-                    let card =
-                        `<div class="col  p-1 mb-4">
+                fetch('src/scripts/data.json')
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        metodologias = data
+                        // console.log(metodologias.length);
+                        metodologias.forEach(element => {
+                            let title = element.title
+                            let thumbnail = element.thumbnail
+                            let excerpt = element.excerpt
+                            let level = element.level
+                            let id = element.id
+                            let card =
+                                `<div class="col  p-1 mb-4">
                         <div class="card __borderRadius h-100   border-0 shadow">
                             <img src="${thumbnail}" class="card-img-top  __borderRadiusTop "
                                 alt="http://placehold.it/200">
                             <div class="card-body text-left">
                                 <span class="badge badge-pill badge-primary">${level}</span>
-                                <h5 class="card-title">${title}</h5>
+                                <h5 class="card-title">${title}<i data-id=${id} class="estrela favicon uil uil-star"></i></h5>
                                 <p class="card-text">${excerpt}</p>
                             </div>
-                            <a  tf-url="artigo.html#${title}" tf-destino="main" class="stretched-link"></a>
+                            <a  tf-url="artigo.html#${title}" tf-destino="main"</a>
                         </div>
                     </div>`
-                    document.querySelector('#__gridMetodologias').insertAdjacentHTML('beforeend', card);
+                            document.querySelector('#__gridMetodologias').insertAdjacentHTML('beforeend', card);
+                        });
+                    })
+                    .then(() => {
+                        let estrela = document.querySelectorAll('.estrela')
+                        estrela.forEach(e => {
+                            e.addEventListener('click', (evento) => {
+
+                                let x = evento.currentTarget
+
+                                // console.log(metodologias[x.dataset.id].thumbnail)
+                                corrente.fav.push(x.dataset.id);
+                                if (sessionStorage.getItem("usuarioCorrente")) {
+                                    localStorage.setItem(`favoritos/${JSON.parse(sessionStorage.getItem("usuarioCorrente")).id}`, JSON.stringify(corrente))
+                                }
+                                // console.log(x.dataset.id)
+                            })
+                        })
+                    });
+            }
+
+
+
+
+
+
+            // Carrossel
+            function renderCarrossel() {
+                new Splide('.splide', {
+                    type: 'loop',
+                    padding: {
+                        right: '5rem',
+                        left: '5rem',
+                    },
+                }).mount();
+            }
+
+            renderCarrossel();
+            renderArtigos();
+
+
+            //navegacao ajax
+            function navegacao(url, seletor, push = true) {
+                fetch(url).then(res => {
+                    return res.text();
+                }).then(data => {
+                    document.querySelector(seletor).innerHTML = data;
+                    renderArtigos();
+                    renderCarrossel();
+                });
+                history.pushState({ url }, null, url);
+            };
+
+
+            document.querySelectorAll('[tf-url]').forEach(e => {
+                let url = e.attributes['tf-url'].value;
+                let destino = e.attributes['tf-destino'].value;
+                e.addEventListener('click', ev => {
+                    ev.preventDefault();
+                    navegacao(url, destino);
                 });
             });
 
-        }
+
+            window.onpopstate = e => {
+                if (e.state) {
+                    navegacao(window.location.href, e.state.url, false);
+                } else {
+                    window.location.href = '/'
+                }
+            };
 
 
-     
 
-        // Carrossel
-        function renderCarrossel() {
-            new Splide('.splide', {
-                type: 'loop',
-                padding: {
-                    right: '5rem',
-                    left: '5rem',
-                },
-            }).mount();
-        }
-
-        renderCarrossel();
-        renderArtigos();
-
-        //navegacao ajax
-        function navegacao(url, seletor, push = true) {
-            fetch(url).then(res => {
-                return res.text();
-            }).then(data => {
-                document.querySelector(seletor).innerHTML = data;
-                renderArtigos();
-                renderCarrossel();
-            });
-            history.pushState({ url }, null, url);
-        };
+            // function favoritos() {
+            //     //estrela
+            //     let estrela = document.querySelectorAll(".estrela");
+            //     console.log(estrela);
+            //     estrela.forEach(element => {
+            //         console.log(element);
+            //     })
+            // }
 
 
-        document.querySelectorAll('[tf-url]').forEach(e => {
-            let url = e.attributes['tf-url'].value;
-            let destino = e.attributes['tf-destino'].value;
-            e.addEventListener('click', ev => {
-                ev.preventDefault();
-                navegacao(url, destino);
-            });
-        });
+            // setTimeout(() => {
+            //     // console.log(metodologias)
+            //     let estrela = document.querySelectorAll('.estrela')
+            //     estrela.forEach(e => {
+            //         e.addEventListener('click', (evento) => {
 
+            //             let x = evento.currentTarget
 
-        window.onpopstate = e => {
-            if (e.state) {
-                navegacao(window.location.href, e.state.url, false);
-            } else {
-                window.location.href = '/'
+            //             // console.log(metodologias[x.dataset.id].thumbnail)
+            //             corrente.fav.push(x.dataset.id);
+            //             if (sessionStorage.getItem("usuarioCorrente")) {
+            //                 localStorage.setItem(`favoritos/${JSON.parse(sessionStorage.getItem("usuarioCorrente")).id}`, JSON.stringify(corrente))
+            //             }
+            //             // console.log(x.dataset.id)
+            //         })
+            //     })
+            // }, 1000)
+
+            // funcao construtora
+            function favusu(i, fav) {
+                this.idusu = i;
+                this.fav = fav;
+            };
+
+            var corrente;
+
+            if (!(sessionStorage.getItem("usuarioCorrente"))) {
+                corrente = new favusu(0, []);
             }
-        };
-    </script>
+            else {
+                if (localStorage.getItem(`favoritos/${JSON.parse(sessionStorage.getItem("usuarioCorrente")).id}`)) {
+                    data = JSON.parse(localStorage.getItem(`favoritos/${JSON.parse(sessionStorage.getItem("usuarioCorrente")).id}`));
+                    corrente = new favusu(data.id, data.fav);
+                }
+                else {
+                    corrente = new favusu(JSON.parse(sessionStorage.getItem("usuarioCorrente")).id, []);
+                }
+            }
+
+        </script>
 </body>
 
 </html>
