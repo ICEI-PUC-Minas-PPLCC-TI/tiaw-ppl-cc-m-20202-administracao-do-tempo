@@ -5,7 +5,7 @@
         "excerpt": "Lorem ipsum dolor sit amet consectetur...",
         "level": "Médio",
         "thumbnail": "src/assets/scrum.jpg",
-        "url": "/artigos/scrum.html",
+        "url": "artigo_scrum.html",
         "article": {
             "cover": "http://placehold.it/900x400",
             "section_1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quia pariatur suscipit repudiandae, temporibus adipisci nulla in explicabo quaerat. Rerum asperiores tempora repudiandae nisi magni est laboriosam corporis dignissimos numquam voluptatibus, deserunt obcaecati velit architecto ipsum vero neque aut perspiciatis sit voluptate sint labore. Dolorum atque mollitia dicta veritatis nihil, sit quam alias eos doloribus possimus! Excepturi odit minus natus est rem temporibus in voluptates laudantium, itaque, reprehenderit quas quaerat possimus fugiat optio, asperiores ea cumque totam quae vel ipsa nemo consectetur velit? Blanditiis voluptatibus dolorem dicta doloremque, harum ducimus repellat quisquam excepturi, modi consequuntur quidem minima fugiat sequi. Temporibus labore consequuntur omnis ad, doloremque, aliquam aut nostrum culpa id blanditiis quasi delectus sint quam enim beatae natus. Iure molestias ratione facilis maiores magni rerum, architecto dignissimos cupiditate, odio sint iste. Aliquid excepturi sequi nihil aspernatur facere nostrum dolorum optio nisi illum voluptates suscipit perspiciatis nulla nam alias quidem rerum ea eaque consequatur quas maxime laborum officia, vitae culpa!",
@@ -20,7 +20,7 @@
         "excerpt": "Lorem ipsum dolor sit amet consectetur...",
         "level": "Fácil",
         "thumbnail": "src/assets/pomodoro.jpg",
-        "url": "/artigos/pomodoro.html",
+        "url": "artigo_pomodoro.html",
         "article": {
             "cover": "http://placehold.it/900x400",
             "section_1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quia pariatur suscipit repudiandae, temporibus adipisci nulla in explicabo quaerat. Rerum asperiores tempora repudiandae nisi magni est laboriosam corporis dignissimos numquam voluptatibus, deserunt obcaecati velit architecto ipsum vero neque aut perspiciatis sit voluptate sint labore. Dolorum atque mollitia dicta veritatis nihil, sit quam alias eos doloribus possimus! Excepturi odit minus natus est rem temporibus in voluptates laudantium, itaque, reprehenderit quas quaerat possimus fugiat optio, asperiores ea cumque totam quae vel ipsa nemo consectetur velit? Blanditiis voluptatibus dolorem dicta doloremque, harum ducimus repellat quisquam excepturi, modi consequuntur quidem minima fugiat sequi. Temporibus labore consequuntur omnis ad, doloremque, aliquam aut nostrum culpa id blanditiis quasi delectus sint quam enim beatae natus. Iure molestias ratione facilis maiores magni rerum, architecto dignissimos cupiditate, odio sint iste. Aliquid excepturi sequi nihil aspernatur facere nostrum dolorum optio nisi illum voluptates suscipit perspiciatis nulla nam alias quidem rerum ea eaque consequatur quas maxime laborum officia, vitae culpa!",
@@ -35,7 +35,7 @@
         "excerpt": "Lorem ipsum dolor sit amet consectetur...",
         "level": "Fácil",
         "thumbnail": "src/assets/gtd.jpg",
-        "url": "/artigos/gtd.html",
+        "url": "artigo_gtd.html",
         "article": {
             "cover": "http://placehold.it/900x400",
             "section_1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quia pariatur suscipit repudiandae, temporibus adipisci nulla in explicabo quaerat. Rerum asperiores tempora repudiandae nisi magni est laboriosam corporis dignissimos numquam voluptatibus, deserunt obcaecati velit architecto ipsum vero neque aut perspiciatis sit voluptate sint labore. Dolorum atque mollitia dicta veritatis nihil, sit quam alias eos doloribus possimus! Excepturi odit minus natus est rem temporibus in voluptates laudantium, itaque, reprehenderit quas quaerat possimus fugiat optio, asperiores ea cumque totam quae vel ipsa nemo consectetur velit? Blanditiis voluptatibus dolorem dicta doloremque, harum ducimus repellat quisquam excepturi, modi consequuntur quidem minima fugiat sequi. Temporibus labore consequuntur omnis ad, doloremque, aliquam aut nostrum culpa id blanditiis quasi delectus sint quam enim beatae natus. Iure molestias ratione facilis maiores magni rerum, architecto dignissimos cupiditate, odio sint iste. Aliquid excepturi sequi nihil aspernatur facere nostrum dolorum optio nisi illum voluptates suscipit perspiciatis nulla nam alias quidem rerum ea eaque consequatur quas maxime laborum officia, vitae culpa!",
@@ -50,7 +50,7 @@
         "excerpt": "Lorem ipsum dolor sit amet consectetur...",
         "level": "Fácil",
         "thumbnail": "src/assets/kanban.jpg",
-        "url": "/artigos/kanban.html",
+        "url": "artigo_kanban.html",
         "article": {
             "cover": "http://placehold.it/900x400",
             "section_1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quia pariatur suscipit repudiandae, temporibus adipisci nulla in explicabo quaerat. Rerum asperiores tempora repudiandae nisi magni est laboriosam corporis dignissimos numquam voluptatibus, deserunt obcaecati velit architecto ipsum vero neque aut perspiciatis sit voluptate sint labore. Dolorum atque mollitia dicta veritatis nihil, sit quam alias eos doloribus possimus! Excepturi odit minus natus est rem temporibus in voluptates laudantium, itaque, reprehenderit quas quaerat possimus fugiat optio, asperiores ea cumque totam quae vel ipsa nemo consectetur velit? Blanditiis voluptatibus dolorem dicta doloremque, harum ducimus repellat quisquam excepturi, modi consequuntur quidem minima fugiat sequi. Temporibus labore consequuntur omnis ad, doloremque, aliquam aut nostrum culpa id blanditiis quasi delectus sint quam enim beatae natus. Iure molestias ratione facilis maiores magni rerum, architecto dignissimos cupiditate, odio sint iste. Aliquid excepturi sequi nihil aspernatur facere nostrum dolorum optio nisi illum voluptates suscipit perspiciatis nulla nam alias quidem rerum ea eaque consequatur quas maxime laborum officia, vitae culpa!",
