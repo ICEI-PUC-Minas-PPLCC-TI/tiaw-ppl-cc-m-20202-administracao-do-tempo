@@ -2,7 +2,7 @@
     {
         "id": 0,
         "title": "Scrum",
-        "excerpt": "Lorem ipsum dolor sit amet consectetur...",
+        "excerpt": "Scrum é uma metodologia ágil para gestão e planejamento de projetos de software. Embora seja amplamente utilizado por empresas de tecnologia e startups, o Scrum pode ser aplicado desde times de desenvolvimento mais enxutos até grandes equipes. É recomendado para quem lida com entregas de projetos, com início, meio e fim.",
         "level": "Médio",
         "thumbnail": "src/assets/scrum.jpg",
         "url": "artigo_scrum.html",
@@ -17,7 +17,7 @@
     {
         "id": 1,
         "title": "Pomodoro",
-        "excerpt": "Lorem ipsum dolor sit amet consectetur...",
+        "excerpt": "Muitas pessoas já devem ter ouvido falar sobre a Técnica Pomodoro. Hoje ela é uma das principais técnicas de concentração utilizadas por estudantes, profissionais, vestibulandos, concurseiros, entre outros. A técnica tem como objetivo a administração de tempo e a manutenção do foco, sendo recomendada para pessoas que costumam procrastinar demais e que acabam se enrolando no momento dos estudos.",
         "level": "Fácil",
         "thumbnail": "src/assets/pomodoro.jpg",
         "url": "artigo_pomodoro.html",
@@ -32,7 +32,7 @@
     {
         "id": 2,
         "title": "Getting the Things Done",
-        "excerpt": "Lorem ipsum dolor sit amet consectetur...",
+        "excerpt": "O Método GTD é uma ferramenta que ensina você a usar o tempo de maneira mais eficiente. Você otimiza o tempo disponível e a sensação é quase como se ele colocasse umas horas a mais no seu dia.",
         "level": "Fácil",
         "thumbnail": "src/assets/gtd.jpg",
         "url": "artigo_gtd.html",
@@ -47,7 +47,7 @@
     {
         "id": 3,
         "title": "Kanban",
-        "excerpt": "Lorem ipsum dolor sit amet consectetur...",
+        "excerpt": "O Kanban, como conhecemos hoje, é muito versátil e pode ser usado em diversas atividades. Ele é altamente recomendado para o desenvolvimento de softwares ou de produtos, bem como para prestação de serviços e para outras tarefas.",
         "level": "Fácil",
         "thumbnail": "src/assets/kanban.jpg",
         "url": "artigo_kanban.html",
