@@ -13,12 +13,12 @@ const wrapperAssistente = document.getElementById('wrapper-assistente')
 const BotaoAssistente = document.getElementById('assistente')
 const menuPrincipal = document.getElementById('__menu__principal')
 const logoNav = document.getElementById('__logoNav')
-const navLink = document.getElementsByClassName('nav-link');
+const navLink = document.getElementsByClassName('__main-nav');
 let removerTarefa = document.querySelectorAll('.remover_tarefa');
 
 // Muda a aparência do menu fixo ao rolar a página
 window.onscroll = (e) => {
-    if (pageYOffset > 0) {b
+    if (pageYOffset > 0) {
         Array.from(navLink).forEach(element => {
             element.classList.remove('text-dark');
             element.classList.add('text-light');
