@@ -173,82 +173,380 @@
     <button style="border-radius: 50px; left: unset; right: 0px;" aria-controls="__wrapper-assistente"
         data-toggle="collapse" data-target="#__wrapper-assistente" class="btn  fixed-bottom shadow btn-dark m-4"
         id="assistente">Assistente de Foco <i class="uil uil-crosshair"></i></button>
-    <!-- Assistente de Foco -->
-    <div style="left: unset; bottom: 45px; max-width: 350px;" id="__wrapper-assistente"
-        class=" collapse   fixed-bottom m-4 p-3  w-auto bg-dark shadow text-light  __borderRadius">
-        <div class="container p-3">
-            <!-- Configuraçao pg1 -->
-            <div class="configuracao">
-                <!-- configura a lista de tarefas-->
-                <h5>Defina seus objetivos!</h5>
-                <p class="text-white-50">Antes de começar alguma tarefa procure deixar explícito quais são seus
-                    objetivos e quanto tempo
-                    pretende
-                    usar para
-                    alcançá-los. Isto o ajudará a se manter focado no que realmente importa!
-                </p>
-                </p class="text-white-50">
-                <div id="__listaDeTarefas">
-                    <div class="lista_de_tarefas input-group mb-3">
-                        <input id="input_tarefa" type="text" class="form-control" placeholder="Defina seus objetivos">
-                        <div class="input-group-append ">
-                            <button class="btn btn-primary rounded-right" id="adicionar_tarefa" type="button"
-                                id="button-addon2"><i class="uil uil-plus"></i></button>
-                        </div>
-                        <ul class="w-100 mt-2 list-group list-group-flush">
-                            <!-- Aqui vai entrar a lista de tarefas -->
-                        </ul>
-                    </div>
-                </div>
-                <!-- Configura o tempo -->
-                <h5 class="mb-4">Defina um limite de tempo para alcançar esses objetivos</h5>
-                <div class="input-group input-group mb-4">
-                    <input type="number" id="input_tempo" placeholder="15" value="15" class="form-control">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text rounded-right" id="inputGroup-sizing-lg">Minutos</span>
-                    </div>
-                </div>
-                <button class="btn btn-primary __roundedButton" id="iniciar_tarefa">Iniciar Tarefa</button>
-            </div><!-- Fim configuracao -->
-            <!-- Execuntando pg2 -->
-            <div class="executando">
-                <div class="objetivos mb-4">
-                    <h5>Seus Objetivos:</h5>
-                    <div class="lista"></div>
-                </div>
-                <div class="tempo">
-                    <h5>Tempo restante</h5>
-                    <div class="area_tempo_restante mb-4">
-                        <span id=tempo_restante>0:0</span>
-                        <span class="text-muted" id="tempoConfigurado"></span>
-                    </div>
-                    <button class="btn btn-primary __roundedButton" id="pausar_resumir">Pausar</button>
-                    <button class="btn btn-primary __roundedButton" id="reiniciar">Reiniciar</button>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Fim container -->
+   <!-- Assistente de Foco -->
+   <div style="left: unset; bottom: 45px; max-width: 350px;" id="__wrapper-assistente"
+   class=" collapse   fixed-bottom m-4 p-3  w-auto bg-dark shadow text-light  __borderRadius">
+   <div class="container p-3">
+       <!-- Configuraçao pg1 -->
+       <div class="configuracao">
+           <!-- configura a lista de tarefas-->
+           <h5>Defina seus objetivos!</h5>
+           <p class="text-white-50">Antes de começar alguma tarefa procure deixar explícito quais são seus
+               objetivos e quanto tempo
+               pretende
+               usar para
+               alcançá-los. Isto o ajudará a se manter focado no que realmente importa!
+           </p>
+           </p class="text-white-50">
+           <div id="__listaDeTarefas">
+               <div class="lista_de_tarefas input-group mb-3">
+                   <input id="input_tarefa" type="text" class="form-control" placeholder="Defina seus objetivos">
+                   <div class="input-group-append ">
+                       <button class="btn btn-primary rounded-right" id="adicionar_tarefa" type="button"
+                           id="button-addon2"><i class="uil uil-plus"></i></button>
+                   </div>
+                   <ul class="w-100 mt-2 list-group list-group-flush">
+                       <!-- Aqui vai entrar a lista de tarefas -->
+                   </ul>
+               </div>
+           </div>
+           <!-- Configura o tempo -->
+           <h5 class="mb-4">Defina um limite de tempo para alcançar esses objetivos</h5>
+           <div class="input-group input-group mb-4">
+               <input type="number" id="input_tempo" placeholder="15" value="15" class="form-control">
+               <div class="input-group-prepend">
+                   <span class="input-group-text rounded-right" id="inputGroup-sizing-lg">Minutos</span>
+               </div>
+           </div>
+           <button class="btn btn-primary __roundedButton" id="iniciar_tarefa">Iniciar Tarefa</button>
+       </div><!-- Fim configuracao -->
+       <!-- Execuntando pg2 -->
+       <div class="executando">
+           <div class="objetivos mb-4">
+               <h5>Seus Objetivos:</h5>
+               <div class="lista"></div>
+           </div>
+           <div class="tempo">
+               <h5>Tempo restante</h5>
+               <div class="area_tempo_restante mb-4">
+                   <span id=tempo_restante>0:0</span>
+                   <span class="text-muted" id="tempoConfigurado"></span>
+               </div>
+               <button class="btn btn-primary __roundedButton" id="pausar_resumir">Pausar</button>
+               <button class="btn btn-primary __roundedButton" id="reiniciar">Reiniciar</button>
+           </div>
+       </div>
+   </div>
+</div> <!-- Fim container -->
+</div><!-- Fim Assistente de foco -->
+<script src="src/vendors/jquery.min.js"></script>
+<script src="src/vendors/bootstrap.min.js"></script>
+<script src="src/vendors/splide.min.js"></script>
+<script src="src/scripts/app.js"></script>
+<!-- Start of ChatBot (BLiP) code -->
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+<script>
+   (function () {
+       window.onload = function () {
+           var builder = new BlipChat()
+               .withEventHandler(BlipChat.LOAD_EVENT, function () { window.localStorage.clear() })
+               .withAppKey('dGFyZWZhZmVpdGE6ODdiYWU4YTMtZDUzYi00OGQ3LTg4NmYtNmI3NTE5M2Q4MGUx')
+               .withButton({ "color": "#488EFE", "icon": "" })
+               .withCustomCommonUrl('https://chat.blip.ai/')
+               .build();
+       }
+   })();
+</script>
+<!-- End of ChatBot code -->
+<!-- Modal-Login -->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               <div id="login">
+                   <h3 class="text-center text-white pt-5">Novo Usuário</h3>
+                   <div class="container">
+                       <div id="login-row" class="row justify-content-center align-items-center">
+                           <div id="login-column" class="col-md-12">
+                               <div id="login-box" class="col-md-12">
+                                   <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                                       <h3 class="text-center text-primary">Login</h3>
+                                       <div class="form-group">
+                                           <label for="username" class="text-primary">Usuário</label><br>
+                                           <input type="text" name="username" id="username" class="form-control ">
+                                       </div>
+                                       <div class="form-group">
+                                           <label for="password" class="text-primary">Senha</label><br>
+                                           <input type="password" name="password" id="password"
+                                               class="form-control">
+                                       </div>
+                                       <div class="form-group text-right">
+                                           <input type="submit" name="submit" class="btn  btn-md btn-primary"
+                                               value="Entrar">
+                                       </div>
+                                   </form>
+                               </div>
+                               <button type="button" class="btn btn-primary" data-toggle="modal"
+                                   data-target="#loginModal">Novo usuario</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- Modal -->
+   <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+       aria-hidden="true">
+       <div class="modal-dialog" role="document">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="loginModalLabel">Login App</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+               </div>
+               <div class="modal-body">
+                   <div id="login-box" class="col-md-12">
+                       <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                           <h3 class="text-center text-primary">Novo usuário</h3>
+                           <div class="form-group">
+                               <label for="login" class="text-primary">Usuário</label><br>
+                               <input type="text" name="txt_login" id="txt_login" class="form-control">
+                           </div>
+                           <div class="form-group">
+                               <label for="nome" class="text-primary">Nome completo</label><br>
+                               <input type="text" name="txt_nome" id="txt_nome" class="form-control">
+                           </div>
+                           <div class="form-group">
+                               <label for="email" class="text-primary">email</label><br>
+                               <input type="text" name="txt_email" id="txt_email" class="form-control">
+                           </div>
+                           <div class="form-group">
+                               <label for="senha" class="text-primary">Senha</label><br>
+                               <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                           </div>
+                           <div class="form-group">
+                               <label for="senha2" class="text-primary">Confirmação de Senha</label><br>
+                               <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                           </div>
+                       </form>
+                   </div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                   <button type="button" id="btn_salvar" class="btn btn-primary">Salvar</button>
+               </div>
+           </div>
+       </div>
+   </div>
+   <script src="src/scripts/login.js"></script>
+   <script>
+       // Declara uma função para processar o formulário de login
+       function processaFormLogin(event) {
+           // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+           event.preventDefault();
+           // Obtem os dados de login e senha a partir do formulário de login
+           var username = document.getElementById('username').value;
+           var password = document.getElementById('password').value;
+           // Valida login e se estiver ok, redireciona para tela inicial da aplicação
+           resultadoLogin = loginUser(username, password);
+           if (resultadoLogin) {
+               window.location.href = 'index.html';
+           }
+           else { // Se login falhou, avisa ao usuário
+               alert('Usuário ou senha incorretos');
+           }
+       }
+       function salvaLogin(event) {
+           // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+           event.preventDefault();
+           // Obtem os dados do formulário
+           let login = document.getElementById('txt_login').value;
+           let nome = document.getElementById('txt_nome').value;
+           let email = document.getElementById('txt_email').value;
+           let senha = document.getElementById('txt_senha').value;
+           let senha2 = document.getElementById('txt_senha2').value;
+           if (senha != senha2) {
+               alert('As senhas informadas não conferem.');
+               return
+           }
+           // Adiciona o usuário no banco de dados
+           addUser(nome, login, senha, email);
+           alert('Usuário salvo com sucesso. Proceda com o login para ');
+           // Oculta a div modal do login
+           //document.getElementById ('loginModal').style.display = 'none';
+           $('#loginModal').modal('hide');
+       }
+       // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
+       document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+       // Associar salvamento ao botao
+       document.getElementById('btn_salvar').addEventListener('click', salvaLogin);        
+   </script>
+   <script>
+       let listaBookmarked = document.querySelector("#__listaBookmarked")
+       let metodologias = {}
+       //Renderiza os artigos
+       function renderArtigos() {
+           fetch('src/scripts/data.json')
+               .then(res => {
+                   return res.json();
+               })
+               .then(data => {
+                   metodologias = data
+                   // console.log(metodologias.length);
+                   metodologias.forEach(element => {
+                       let title = element.title
+                       let thumbnail = element.thumbnail
+                       let excerpt = element.excerpt
+                       let id = element.id
+                       let url = element.url
+                       let level = element.level
+                       let card =
+                           `<div class="col  p-1 mb-4">
+                   <div class="card __borderRadius h-100   border-0 shadow">
+                       <img src="${thumbnail}" class="card-img-top  __borderRadiusTop "
+                           alt="http://placehold.it/200">
+                       <div class="card-body text-left">
+                           <span class="badge badge-pill bg-light text-dark border badge-secondary">${level}</span>
+                           <h5 class="card-title">${title} <i style="z-index: 10000;" data-id="${id}" class="__fav uil uil-bookmark text-success"></i></h5>
+                           <p class="card-text">${excerpt}</p>
+                           <a class="text-light" data-id="${id}" href="${url}" "><button class="btn btn-primary">Aprenda</button></a>
+                       </div>
+                   </div>
+               </div>`
+                       document.querySelector('#__gridMetodologias').insertAdjacentHTML('beforeend', card);
+                   });
+               })
+               .then(() => {
+                   var fav = JSON.parse(localStorage.getItem('fav')) || []
+                   document.querySelectorAll(".__fav").forEach(e => {
+                       e.addEventListener('click', ev => {
+                           var icon = ev.currentTarget
+                           // console.log(ev.dataset.id);
+                           icon.classList.toggle('marked')
+                           if (icon.classList.contains('marked')) {
+                               // Adiciona o favoritos no local storage
+                               fav.push(icon.dataset.id)
+                               localStorage.setItem('fav', JSON.stringify(fav))
+                               
+                               listaBookmarked.innerHTML = ""
+                               fav.forEach(e => {
+                                   console.log(metodologias[e].title);
+                                   let liBookmarked =
+                                       `
+                               <li class="dropdown-item media my-3">
+                               <img style="width: 50px" class="mr-3" src="${metodologias[e].thumbnail}" alt="">
+                               <div class="media-body mt-0 mb-0 pb-0">
+                                   <h6>${metodologias[e].title}<br>
+                                       <a href="${metodologias[e].url}">  <small class="mt-0 pt-0 muted">Leia Agora <i
+                                           class="uil uil-arrow-right"></i></small></a>
+                                   </h6>
+                               </div>
+                           </li>
+                               `
+
+                               
+                               listaBookmarked.insertAdjacentHTML('beforeend', liBookmarked);
 
 
-    <script src="../src/vendors/jquery.min.js"></script>
-    <script src="../src/vendors/bootstrap.min.js"></script>
-    <script src="../src/vendors/splide.min.js"></script>
-    <script src="../src/scripts/app.js"></script>
+                               })
 
-    <script>
 
-        $('#__artigo-conteudo').scrollspy({
-            target: '#__nav-artigo-link',
-            offset: 250,
-            method: 'auto'
+                               // console.log(fav.indexOf(icon.dataset.id));
+                               icon.classList.remove("uil-bookmark", "uil-bookmark")
+                               icon.classList.add("uis-bookmark", "uis-bookmark")
+                           } else {
+                               // Remove o favoritos no local storage
+                               fav.splice(fav.indexOf(icon.dataset.id), 1);
+                               localStorage.setItem('fav', JSON.stringify(fav))
+                               //  Adiciona na lista 
+                              
+                               
+                               listaBookmarked.innerHTML = ""
 
-        })
+                               
+                               fav.forEach(e => {
+                                   console.log(metodologias[e].title);
+                                   let liBookmarked =
+                                       `
+                               <li class="dropdown-item media my-3">
+                               <img style="width: 50px" class="mr-3" src="${metodologias[e].thumbnail}" alt="">
+                               <div class="media-body mt-0 mb-0 pb-0">
+                                   <h6>${metodologias[e].title}<br>
+                                       <a href="${metodologias[e].url}">  <small class="mt-0 pt-0 muted">Leia Agora <i
+                                           class="uil uil-arrow-right"></i></small></a>
+                                   </h6>
+                               </div>
+                           </li>
+                               `
 
-        $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
-            console.log('oi');
-        })
-    </script>
+                               
+                               listaBookmarked.insertAdjacentHTML('beforeend', liBookmarked);
 
+
+                               })
+
+
+                               icon.classList.remove("uis-bookmark", "uis-bookmark")
+                               icon.classList.add("uil-bookmark", "uil-bookmark")
+                           }
+                       })
+                   })
+                   //navegacao ajax
+                   // function navegacao(url, seletor, push = true) {
+                   //     fetch(url).then(res => {
+                   //         return res.text();
+                   //     }).then(data => {
+                   //         document.querySelector(seletor).innerHTML = data;
+                   //         renderArtigos();
+                   //         renderCarrossel();
+                   //     });
+                   //     history.pushState({ url }, null, url);
+                   // };
+                   // document.querySelectorAll('[tf-url]').forEach(e => {
+                   //     let url = e.attributes['tf-url'].value;
+                   //     let destino = e.attributes['tf-destino'].value;
+                   //     e.addEventListener('click', ev => {
+                   //         console.log(metodologias[ev.currentTarget.dataset.id - 1].title);
+                   //         // document.body.innerHTML = metodologias[ev.currentTarget.dataset.id - 1]
+                   //         // if()
+                   //         ev.preventDefault();
+                   //         navegacao(url, destino);
+                   //     });
+                   // });
+                   // window.onpopstate = e => {
+                   //     if (e.state) {
+                   //         navegacao(window.location.href, e.state.url, false);
+                   //     } else {
+                   //         window.location.href = '/'
+                   //     }
+                   // };
+               })
+       }
+       // Carrossel
+       function renderCarrossel() {
+           new Splide('.splide', {
+               type: 'loop',
+               padding: {
+                   right: '5rem',
+                   left: '5rem',
+               },
+           }).mount();
+       }
+       renderCarrossel();
+       renderArtigos();
+   </script>
+
+<script>
+
+$('#__artigo-conteudo').scrollspy({
+   target: '#__nav-artigo-link',
+   offset: 250,
+   method: 'auto'
+
+})
+
+$('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+   console.log('oi');
+})
+</script>
 </body>
 
 </html>
