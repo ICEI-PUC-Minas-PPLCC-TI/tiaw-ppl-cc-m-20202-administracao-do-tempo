@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefa Feita</title>
-    <link rel="stylesheet" href="../src/vendors/splide.min.css">
-    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="src/vendors/splide.min.css">
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/solid.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/line.css">
-    <link rel="icon" href="../src/assets/favicon.svg" type="image/x-icon" />
+    <link rel="icon" href="src/assets/favicon.svg" type="image/x-icon" />
 </head>
 
-<body>
+<body class="position: relative">
     <!-- Menu -->
     <nav style="background-color: rgba(255, 255, 255, 0.623);" id="__menu__principal"
         class="fixed-top navbar navbar-expand-sm navbar-light  border-bottom p-3">
         <div class="container-xl">
-            <a class="navbar-brand" href="/index.html"><img id="__logoNav" width="190"
-                    src="../src/assets/logo-tarefa-feita.svg" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img id="__logoNav" width="190"
+                    src="src/assets/logo-tarefa-feita.svg" alt=""></a>
             <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,18 +27,37 @@
                             class="__main-nav nav-link font-weight-bold text-dark " tf-url="sobre-o-projeto.html"
                             tf-destino="main">Sobre o Projeto</a>
                     </li>
-                    <li class="nav-item"><a href="contato.html" class=" __main-nav nav-link font-weight-bold text-dark"
-                            tf-url="contato.html" tf-destino="main">Contato</a></li>
+                    <li class="nav-item"><a href="nosso-contato.html"
+                            class=" __main-nav nav-link font-weight-bold text-dark" tf-url="contato.html"
+                            tf-destino="main">Contato</a></li>
                     </li>
                     <li class="nav-item"><a class="__main-nav nav-link font-weight-bold text-dark" data-toggle="modal"
                             data-target="#exampleModal"><i style=" line-height: 1px; font-size: 1.3em;"
                                 class="uil uil-user-circle"></i></a></li>
                     </li>
+                    <li class="nav-item">
+                        <div class="dropdown __main-nav nav-link font-weight-bold text-dark">
+                            <button class="__main-nav"
+                                style="border: 0; padding: 0; margin: 0; background-color: unset;"
+                                data-toggle="dropdown">
+                                <i style="line-height: 1px; font-size: 1.3em;" class="uil uil-notebooks"></i>
+                            </button>
+                            <ul id="__listaBookmarked" class="list-unstyled dropdown-menu dropdown-menu-right">
+
+                                <li class="dropdown-item">
+
+                                    <p>Nenhum artigo salvo ainda!</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
 
+        </div>
+    </nav>
     <!-- COMEÇA A PARTIR DAQUI -->
     <!-- CABECALHO DA PAGINA -->
 
@@ -73,68 +90,82 @@
 
             <!-- Conteúdo -->
             <div id="__artigo-conteudo" class="col-sm border-lef">
-                <img class="pt-2 pt-md-5 w-100" src="http://placehold.it/900x400" alt="">
+                <img class="pt-2 pt-md-5 w-100" src="src/assets/kanban.jpg" alt="">
                 <div class="container-lg  pb-5">
 
                     <h2 id="paraQuem">Para quem é indicado?</h2>
-                    <p>Muitas pessoas já devem ter ouvido falar sobre a Técnica Pomodoro. Hoje ela é uma das principais
-                        técnicas de concentração utilizadas por estudantes, profissionais, vestibulandos, concurseiros,
-                        entre outros. A técnica tem como objetivo a administração de tempo e a manutenção do foco, sendo
-                        recomendada para pessoas que costumam procrastinar demais e que acabam se enrolando no momento
-                        dos estudos. </p>
+                    <p>O Kanban, como conhecemos hoje, é muito versátil e pode ser usado em diversas atividades. Ele é
+                        altamente recomendado para o desenvolvimento de softwares ou de produtos, bem como para
+                        prestação de serviços e para outras tarefas.</p>
                     <h2 id="visaoGeral">Visão Geral</h2>
-                    <p>A técnica foi desenvolvida no final dos anos 80 pelo italiano Francesco Cirillo, que procurava
-                        uma maneira de aumentar sua produtividade nos estudos durante os primeiros anos de universidade.
-                        Para isso, ele utilizou um timer de cozinha para organizar suas tarefas.
+                    <p>A metodologia kanban foi criado pela japonesa Toyota na década de 1960 e faz parte da metodologia
+                        JIT (Just in Time), um sistema de administração da produção que determina que deve ser feito
+                        somente o imprescindível para realização da etapa seguinte do processo, em um fluxo de trabalho
+                        contínuo. Em outras palavras: fazer apenas o que é necessário, quando necessário e na quantidade
+                        necessária.
 
-                        Seu timer tinha o formato de um tomate (pomodoro, em italiano) e girava durante 25 minutos,
-                        emitindo um barulho forte ao final desse prazo. Nesse meio tempo, Cirillo se concentrava nas
-                        suas tarefas sem interrupções, mantendo-se 100% focado. Ao perceber os resultados satisfatórios,
-                        divulgou sua técnica em 1992.</p>
+                        Em meio à falta de recursos e diante da necessidade de se modernizar para acompanhar as mudanças
+                        do mercado, a empresa precisava mudar sua metodologia de gestão e procurar por uma gestão por
+                        resultados. Era preciso agir rápido e urgentemente para criar um novo sistema de manufatura.
+                        Assim, inspirados pelo livro Today and Tomorrow, de Henry Ford, os gestores da Toyota
+                        desenvolveram o kanban.
+
+                        Na Toyota em dificuldade, a visualidade do kanban facilitou muito o trabalho das equipes de
+                        produção e montagem. Porque o sistema melhorou a comunicação entre os colaboradores, bem como o
+                        entendimento de quais peças precisavam ser repostas e quando. A padronização também foi
+                        auxiliada pelo sistema, assim como a redução de desperdícios.</p>
                     <h2 id="comoFunciona">Como Funciona?</h2>
-                    <p>A técnica se baseia na ideia de que dividindo o nosso fluxo de trabalho em blocos de concentração  intensa, conseguimos melhorar a agilidade do cérebro e estimular nosso foco. Em outras palavras, melhoramos nossa gestão do tempo e ficamos mais eficientes.
+                    <p>A metodologia kanban propõe a utilização de cartões ou post-its em um quadro para indicar e
+                        acompanhar, de maneira visual, prática e utilizando poucos recursos, o andamento dos fluxos de
+                        produção nas empresas. De um lado do quadro, ficam as tarefas que precisam ser executadas, o que
+                        pode ser chamado de “Backlog”. E, do outro, as etapas de execução: em andamento e entregue. Você
+                        pode alterar o nome dessas etapas de acordo com seus processos internos. Conforme as tarefas são
+                        desempenhadas, o cartão ou post-it é colocado no campo correspondente ao status da tarefa.
 
-                        Primeiramente, você deve fazer uma lista de tarefas a serem desempenhadas durante o dia. Depois, basta dividir seu tempo em períodos de 25 minutos (chamados “pomodoros”) e trabalhar ininterruptamente em suas tarefas nesses períodos.
-                        
-                        Quando o timer tocar (ao fim dos primeiros 25 minutos), faça um X nas tarefas concluídas ou anote o status de seu trabalho (50% concluído, por exemplo) e faça um breve intervalo de 5 minutos. Nessa pausa, aproveite para fazer outras coisas não relacionadas à tarefa (ir ao banheiro, ligar para um cliente, tomar um café, etc). 
-                        
-                        A cada quatro ciclos, faça uma pausa maior (entre 15 e 30 minutos) para descansar. Esses intervalos entres os pomodoros são fundamentais para “oxigenar o seu cérebro” e aumentar a agilidade mental. Vale lembrar que essas medidas de tempo são apenas as sugeridas no método clássico. Nada impede que você encontre o seu próprio equilíbrio e período de descanso ideal. </p>
+                        Essa facilidade de visualização e interpretação, faz com que a comunicação entre os funcionários
+                        seja muito mais rápida e efetiva e todos saibam exatamente as tarefas que precisam ser feitas e
+                        as que já foram realizadas.
+                    </p>
                     <h2 id="ferramentasUteis">Ferramentas Úteis</h2>
-                    <p>As ferramentas abaixo são feitas para otimizar os processos e facilita no estudo trazendo mais rapidez, dinamismo e produtividade.
+                    <p>As ferramentas abaixo são feitas para otimizar os processos e o gerenciamento de equipes e projetos, trazendo mais rapidez, dinamismo e produtividade.
 
-                        Pomodoro Timer Lite
+
+                        Kanbanize
                         
                         
-                        - Plataformas
+                        - Plataformas:
                             - Web
                             - IOS
                             - Android
-                            - Desktop
-                        - Gratuito
-                        - Nota: 4/5
-                        
-                        
-                        Focus ToDo
-                        
-                        
-                        - Plataformas
-                            - Web
-                            - IOS
-                            - Android
-                            - Desktop
                         - Gratuito
                         - Nota: 3/5
                         
                         
-                        Brain Focus
+                        Jira
                         
                         
-                        - Plataformas
-                            -Desktop
+                        - Plataformas:
+                            - Web
                             - IOS
                             - Android
                         - Gratuito
-                        - Nota: 3.8/5</p>
+                        - Nota: 3/5
+                        
+                        Nota: 4.4/5
+                        
+                        
+                        Trello
+                        
+                        
+                        - Plataformas:
+                            - Web
+                            - IOS
+                            - Android
+                            - Desktop
+                        - Gratuito
+                        - Nota: 4.5/5</p>
+
+                        
 
                 </div>
             </div>
